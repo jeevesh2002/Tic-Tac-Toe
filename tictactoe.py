@@ -33,10 +33,7 @@ def player(board):
             if cell == O:
                 o_count += 1
 
-    if x_count <= o_count:
-        return X
-    else:
-        return O
+    return X if x_count <= o_count else O
 
 
 def actions(board):
@@ -99,10 +96,7 @@ def terminal(board):
     """
     Returns True if game is over, False otherwise.
     """
-    if winner(board) is not None or not actions(board):
-        return True
-    else:
-        return False
+    return winner(board) is not None or not actions(board)
 
 
 def utility(board):
